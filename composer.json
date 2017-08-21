@@ -1,0 +1,33 @@
+{
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "wordpress",
+                "type": "webroot",
+                "version": "4.8.1",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/WordPress/WordPress/archive/4.8.1.zip"
+                },
+                "require" : {
+                    "fancyguy/webroot-installer": "1.0.0"
+                }
+            }
+        }
+    ],
+    "require": {
+        "ext-curl": "*",
+        "wordpress": "4.8.1",
+        "fancyguy/webroot-installer": "1.0.0",
+        "consolidation/robo": "^1.1"
+    },
+    "extra": {
+        "webroot-dir": "public/wp",
+        "webroot-package": "wordpress"
+    },
+    "scripts": {
+      "robo": "robo --ansi",
+      "post-install-cmd": "robo wordpress:init"
+    }
+}
